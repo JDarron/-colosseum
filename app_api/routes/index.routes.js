@@ -1,29 +1,21 @@
-const express = require('express')
-    , router = express.Router()
-    // , authRoutes = require('./auth/authRoutes')
-    // ROUTES
-    , userRoutes = require("./api/user.routes")
-    , playerRoutes = require("./api/player.routes")
-    , followPlayerRoutes = require("./api/followPlayer.routes")
-    , gameRoutes = require("./api/game.routes")
-    , followGameRoutes = require("./api/followGame.routes")
-    , gameRosterRoutes = require("./api/gameRoster.routes")
-    , teamRoutes = require("./api/team.routes")
-    , followTeamRoutes = require("./api/followTeam.routes")
-    , teamRosterRoutes = require("./api/teamRoster.routes")
-    , seasonRoutes = require("./api/season.routes")
-    , seasonRosterRoutes = require("./api/seasonRoster.routes")
-    , matchRoutes = require("./api/match.routes")
-    , matchRosterRoutes = require("./api/matchRoster.routes");
+const express = require('express');
+const router = express.Router();
+// API ROUTES
+const userRoutes = require("./api/user.routes");
+const playerRoutes = require("./api/player.routes");
+const followPlayerRoutes = require("./api/followPlayer.routes");
+const gameRoutes = require("./api/game.routes");
+const followGameRoutes = require("./api/followGame.routes");
+const gameRosterRoutes = require("./api/gameRoster.routes");
+const teamRoutes = require("./api/team.routes");
+const followTeamRoutes = require("./api/followTeam.routes");
+const teamRosterRoutes = require("./api/teamRoster.routes");
+const seasonRoutes = require("./api/season.routes");
+const seasonRosterRoutes = require("./api/seasonRoster.routes");
+const matchRoutes = require("./api/match.routes");
+const matchRosterRoutes = require("./api/matchRoster.routes");
 
-    // , jwt = require('express-jwt');
-
-// // unprotected routes
-// router.use('/auth', authRoutes);
-
-// authentication middleware: every route declared after this use statement is protected
-// router.use(jwt({ secret: process.env.JWT_SECRET }));
-
+// USER & ALL PROTECTED
 router.use("/user", userRoutes);
 // PLAYER
 router.use("/player", playerRoutes);

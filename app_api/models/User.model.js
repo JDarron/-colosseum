@@ -2,11 +2,19 @@
 module.exports = function (sequelize, DataTypes) {
 
     const User = sequelize.define("User", {
-        name:
-        {
+        email: {
             type: DataTypes.STRING,
-            allowNull: false
-        }
+            unique: true,
+            allowNull: false,
+            validate: {
+                isEmail: true
+            }
+        },
+        first_name: DataTypes.STRING,
+        last_name: DataTypes.STRING,
+        salt: DataTypes.STRING,
+        hash: DataTypes.STRING
+
     }); // END User CONSTRUCTOR
 
     User.associate = function (models) {
